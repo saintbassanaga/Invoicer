@@ -1,7 +1,7 @@
 #     Invoicer
 
 
-<img src="../Invoicer/src/main/resources/com/gcode/invoicer/home.png" width="720" height="580" style="align-content:center">
+<img src="/src/main/resources/com/gcode/invoicer/home.png" width="720" height="580" style="align-content:center">
 
 1. **WHo is INVOICER ??**
 <p>
