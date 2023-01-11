@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.SubScene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="525.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.gcode.invoicer.Controller">
+    <GridPane VBox.vgrow="ALWAYS">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <AnchorPane fx:id="AddClient" style="-fx-background-color: #2e354f;" visible="false"
+                    xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+            <Group layoutX="47.0" layoutY="-6.0">
+                <TextField fx:id="N2" layoutX="216.0" layoutY="195.0" prefHeight="33.0" prefWidth="269.0"
+                           promptText="Address"
+                           style="-fx-background-color: #2e354f; -fx-border-color: #8c90b3; -fx-border-radius: 2; -fx-text-inner-color:white;"/>
+                <SubScene fill="#a82525" height="525.0" visible="false" width="700.0">
+                    <root>
+                        <Region/>
+                    </root>
+                </SubScene>
+                <TextField fx:id="N0" layoutX="216.0" layoutY="138.0" prefHeight="33.0" prefWidth="269.0"
+                           promptText="Numero Client"
+                           style="-fx-background-color: #2e354f; -fx-border-color: #8c90b3; -fx-border-radius: 2; -fx-text-inner-color:white;"/>
+                <TextField fx:id="N1" layoutX="216.0" layoutY="252.0" prefHeight="33.0" prefWidth="269.0"
+                           promptText="Start with an Uppercase"
+                           style="-fx-background-color: #2e354f; -fx-border-color: #8c90b3; -fx-border-radius: 2; -fx-text-inner-color:white;"/>
+                <TextField fx:id="N3" layoutX="216.0" layoutY="309.0" prefHeight="33.0" prefWidth="269.0"
+                           promptText="Ex : A85hbv"
+                           style="-fx-background-color: #2e354f; -fx-border-color: #8c90b3; -fx-border-radius: 2; -fx-text-inner-color:white;"/>
+                <TextField fx:id="N4" layoutX="216.0" layoutY="366.0" prefHeight="33.0" prefWidth="269.0"
+                           promptText="Ex : Z85b8"
+                           style="-fx-background-color: #2e354f; -fx-border-color: #8c90b3; -fx-border-radius: 2; -fx-text-inner-color:white;"/>
+                <Label layoutX="122.0" layoutY="257.0" prefHeight="24.0" prefWidth="73.0"
+                       style="-fx-background-color: #2e354f;" text="Nom :" textFill="#42cf9b"/>
+                <Label layoutX="128.0" layoutY="143.0" prefHeight="24.0" prefWidth="73.0"
+                       style="-fx-background-color: #2e354f;" text="N° :" textFill="#42cf9b"/>
+                <Label layoutX="122.0" layoutY="200.0" prefHeight="24.0" prefWidth="73.0"
+                       style="-fx-background-color: #2e354f;" text="Address :" textFill="#42cf9b"/>
+                <Label layoutX="122.0" layoutY="314.0" prefHeight="24.0" prefWidth="73.0"
+                       style="-fx-background-color: #2e354f;" text="Registry :" textFill="#42cf9b"/>
+                <Label layoutX="122.0" layoutY="371.0" prefHeight="24.0" prefWidth="73.0"
+                       style="-fx-background-color: #2e354f;" text="Matriculate Fiscal :" textFill="#42cf9b"/>
+            </Group>
+            <Group layoutX="158.0" layoutY="442.0" >
+                <Button fx:id="btn11" cancelButton="true" layoutX="312.0" mnemonicParsing="false"
+                        onAction="#clearC" prefHeight="33.0" prefWidth="92.0"
+                        style="-fx-background-color: #42cf9b; -fx-font-family: Poiret One;" text="Clear "
+                        textFill="WHITE"/>
+                <Button fx:id="btn12" defaultButton="true" layoutX="149.0" mnemonicParsing="false"
+                        onAction="#saveClient" prefHeight="33.0" prefWidth="86.0"
+                        style="-fx-background-color: #42cf9b; -fx-font-family: Poiret One;" text="Save "
+                        textFill="WHITE"/>
+                <Button fx:id="btn" mnemonicParsing="false" onAction="#back" prefHeight="33.0"
+                        prefWidth="86.0" style="-fx-background-color: #42cf9b ;" text="Back"
+                        textFill="WHITE"/>
+            </Group>
+            <Label layoutX="253.0" layoutY="62.0" prefHeight="29.0" prefWidth="194.0"
+                   style="-fx-background-color: #2e354f;" text="Add New Client" textFill="#42cf9b">
+                <font>
+                    <Font size="23.0"/>
+                </font>
+            </Label>
+            <ImageView accessibleRole="BUTTON" fitHeight="33.0" fitWidth="26.0" layoutX="30.0" layoutY="38.0"
+                       onMouseClicked="#comeback" pickOnBounds="true" preserveRatio="true">
+                <Image url="@img/back.png"/>
+            </ImageView>
+        </AnchorPane>
+        <AnchorPane fx:id="Home" accessibleRole="HYPERLINK" prefHeight="525.0" prefWidth="700.0"
+                    style="-fx-background-color: #2c344b;">
+            <ImageView fx:id="img1" fitHeight="196.0" fitWidth="227.0" layoutX="32.0" layoutY="59.0"
+                       pickOnBounds="true" preserveRatio="true">
+                <Image url="@img/icon.png"/>
+            </ImageView>
+            <Label fx:id="welcomeText1" alignment="CENTER" graphicTextGap="8.0" layoutX="334.0" layoutY="157.0"
+                   text="The Tools That Come Up to your Invoice Activity" textFill="#f2ebeb">
+                <font>
+                    <Font name="Fira Code Bold" size="9.0"/>
+                </font>
+            </Label>
+            <Label fx:id="welcomeText" alignment="CENTER" graphicTextGap="8.0" layoutX="313.0" layoutY="95.0"
+                   prefHeight="33.0" prefWidth="324.0" text="Welcome to INVOICER">
+                <textFill>
+                    <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                        <stops>
+                            <Stop>
+                                <color>
+                                    <Color/>
+                                </color>
+                            </Stop>
+                            <Stop offset="0.18456375838926173">
+                                <color>
+                                    <Color red="0.6447368264198303" green="0.12238060683012009"
+                                           blue="0.12238060683012009"/>
+                                </color>
+                            </Stop>
+                            <Stop offset="1.0">
+                                <color>
+                                    <Color red="0.9736841917037964" green="0.9556530117988586"
+                                           blue="0.9556530117988586"/>
+                                </color>
+                            </Stop>
+                        </stops>
+                    </RadialGradient>
+                </textFill>
+                <font>
+                    <Font name="Iosevka Bold" size="26.0"/>
+                </font>
+            </Label>
+            <Label accessibleRole="HYPERLINK" alignment="CENTER" graphicTextGap="8.0" layoutX="46.0"
+                   layoutY="472.0" text="Copyright @saintpaul" textFill="#f2ebeb">
+                <font>
+                    <Font name="Fira Code Medium" size="9.0"/>
+                </font>
+            </Label>
+            <Label fx:id="AppName" accessibleRole="HYPERLINK" alignment="CENTER" graphicTextGap="8.0"
+                   layoutX="94.0" layoutY="271.0" text="INVOICER">
+                <font>
+                    <Font name="Iosevka Bold" size="26.0"/>
+                </font>
+                <textFill>
+                    <RadialGradient centerX="0.5277777777777778" centerY="0.5" radius="0.5">
+                        <stops>
+                            <Stop>
+                                <color>
+                                    <Color red="0.7763158082962036" green="0.6325535774230957"
+                                           blue="0.6325535774230957"/>
+                                </color>
+                            </Stop>
+                            <Stop offset="0.18456375838926173">
+                                <color>
+                                    <Color red="0.6447368264198303" green="0.12238060683012009"
+                                           blue="0.12238060683012009"/>
+                                </color>
+                            </Stop>
+                            <Stop offset="1.0">
+                                <color>
+                                    <Color red="0.9736841917037964" green="0.9556530117988586"
+                                           blue="0.9556530117988586"/>
+                                </color>
+                            </Stop>
+                        </stops>
+                    </RadialGradient>
+                </textFill>
+            </Label>
+            <Button fx:id="btn2" layoutX="294.0" layoutY="352.0" mnemonicParsing="false"
+                    onAction="#loadAddClientC" onMouseClicked="#loadAddClient" opacity="0.86" prefHeight="33.0"
+                    prefWidth="111.0" style="-fx-background-color: #42cf9b; -fx-font-family: Poiret One;"
+                    text="Client" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="14.0"/>
+                </font>
+            </Button>
+            <Button fx:id="btn3" layoutX="547.0" layoutY="352.0" mnemonicParsing="false"
+                    onAction="#loadAddDevisC" onMouseClicked="#loadAddDevis" opacity="0.86" prefHeight="33.0"
+                    prefWidth="111.0" style="-fx-background-color: #42cf9b; -fx-font-family: Poiret One;"
+                    text="Devis" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="14.0"/>
+                </font>
+            </Button>
+            <Button fx:id="btn1" layoutX="421.0" layoutY="263.0" mnemonicParsing="false"
+                    onAction="#loadAddArticles" onMouseClicked="#loadAddArticle" opacity="0.86"
+                    prefHeight="33.0" prefWidth="111.0"
+                    style="-fx-background-color: #42cf9b; -fx-font-family: Poiret One;" text="Articles"
+                    textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="14.0"/>
+                </font>
+            </Button>
+            <Hyperlink fx:id="ContactMe" layoutX="421.0" layoutY="469.0"
+                       text="Contact Me - saintbassanaga01@gmail.com" textFill="#ddb2b2">
+                <font>
+                    <Font name="Fira Code Regular" size="9.0"/>
+                </font>
+            </Hyperlink>
+        </AnchorPane>
+        <AnchorPane id="AnchorPane" fx:id="AddArticle" prefHeight="272.0" prefWidth="361.0"
+                    style="-fx-background-color: #2c344b;" visible="false">
+            <Label fx:id="articleTitle" accessibleRole="HYPERLINK" alignment="CENTER" graphicTextGap="8.0"
+                   layoutX="295.0" layoutY="78.0" text="ADD ARTICLE" textFill="#dad0d0">
+                <font>
+                    <Font name="Iosevka Bold" size="20.0"/>
+                </font>
+            </Label>
+            <Group layoutX="196.0" layoutY="195.0">
+                <Label layoutY="5.0" prefHeight="24.0" prefWidth="86.0"
+                       style="-fx-background-color: #2e354f;" text="N°" textFill="#42cf9b"/>
+                <TextField fx:id="articleNumber" layoutX="86.0" prefHeight="33.0" prefWidth="223.0"
+                           promptText="Article Number"
+                           style="-fx-background-color: #2e354f; -fx-border-color: #8c90b3; -fx-border-radius: 2; -fx-text-inner-color:white;"/>
+                <TextField fx:id="articleName" layoutX="86.0" layoutY="55.0" prefHeight="33.0" prefWidth="223.0"
+                           promptText="Start with an Uppercase"
+                           style="-fx-background-color: #2e354f; -fx-border-color: #8c90b3; -fx-border-radius: 2; -fx-text-inner-color:white;"/>
+                <Label layoutY="60.0" prefHeight="24.0" prefWidth="79.0"
+                       style="-fx-background-color: #2e354f;" text="Libellé" textFill="#42cf9b"/>
+                <TextField fx:id="articlePrice" layoutX="86.0" layoutY="103.0" prefHeight="33.0" prefWidth="223.0"
+                           promptText="Price"
+                           style="-fx-background-color: #2e354f; -fx-border-color: #8c90b3; -fx-border-radius: 2; -fx-text-inner-color:white;"/>
+                <Label layoutY="108.0" prefHeight="24.0" prefWidth="86.0"
+                       style="-fx-background-color: #2e354f;" text="Prix             " textFill="#42cf9b"/>
+            </Group>
+            <Group layoutX="140.0" layoutY="427.0">
+                <Button fx:id="cancelbtn" cancelButton="true" layoutX="312.0" mnemonicParsing="false"
+                        onAction="#clearC" prefHeight="33.0" prefWidth="92.0"
+                        style="-fx-background-color: #42cf9b; -fx-font-family: Poiret One;" text="Clear "
+                        textFill="WHITE"/>
+                <Button fx:id="savebtn" defaultButton="true" layoutX="159.0" layoutY="-2.0"
+                        mnemonicParsing="false" onAction="#saveClient" prefHeight="33.0" prefWidth="86.0"
+                        style="-fx-background-color: #42cf9b; -fx-font-family: Poiret One;" text="Save "
+                        textFill="WHITE"/>
+                <Button fx:id="backbtn" mnemonicParsing="false" onAction="#back" prefHeight="33.0"
+                        prefWidth="86.0" style="-fx-background-color: #42cf9b ;" text="Back"
+                        textFill="WHITE"/>
+            </Group>
+            <Label layoutX="263.0" layoutY="72.0" prefHeight="29.0" prefWidth="194.0"
+                   style="-fx-background-color: #2e354f;" text="Add New Article" textFill="#42cf9b">
+                <font>
+                    <Font size="23.0"/>
+                </font>
+            </Label>
+            <ImageView accessibleRole="BUTTON" fitHeight="33.0" fitWidth="26.0" layoutX="30.0" layoutY="41.0"
+                       onMouseClicked="#comeback" pickOnBounds="true" preserveRatio="true">
+                <Image url="@img/back.png"/>
+            </ImageView>
+        </AnchorPane>
+        <AnchorPane id="AnchorPane" fx:id="createDevis" prefHeight="342.0" prefWidth="567.0"
+                    style="-fx-background-color: #2e354f;" visible="false">
+            <Group layoutX="350.0" layoutY="138.0">
+                <Label layoutX="13.0" layoutY="6.0" prefHeight="24.0" prefWidth="92.0"
+                       style="-fx-background-color: #2e354f;" text="N°" textFill="#42cf9b"/>
+                <TextField fx:id="numFacture" layoutX="111.0" layoutY="1.0" prefHeight="33.0" prefWidth="192.0"
+                           promptText="Numero de Facture"
+                           style="-fx-background-color: #2e354f; -fx-border-color: #8c90b3; -fx-border-radius: 2; -fx-text-inner-color:white;"/>
+                <Label layoutY="119.0" prefHeight="24.0" prefWidth="92.0"
+                       style="-fx-background-color: #2e354f;" text="Date Facture " textFill="#42cf9b"/>
+                <DatePicker fx:id="dateFacturation" layoutX="118.0" layoutY="114.0" prefHeight="33.0" prefWidth="192.0"
+                            style="-fx-background-color: #2e354f;"/>
+                <ComboBox fx:id="clientcbx" layoutX="117.0" layoutY="47.0" prefHeight="33.0" prefWidth="192.0"
+                          promptText="Client"/>
+                <Label layoutX="7.0" layoutY="64.0" prefHeight="16.0" prefWidth="104.0" text="Client"
+                       textFill="#42cf9b"/>
+            </Group>
+            <TableView fx:id="list1" layoutX="29.0" layoutY="139.0" prefHeight="268.0" prefWidth="304.0">
+                <effect>
+                    <DropShadow/>
+                </effect>
+                <columns>
+                    <TableColumn fx:id="arc1" prefWidth="105.0" text="Articles"/>
+                    <TableColumn fx:id="check1" prefWidth="89.0" text="Prix"/>
+                    <TableColumn fx:id="txt1" prefWidth="109.0" text="Quantity"/>
+                </columns>
+            </TableView>
+            <Button fx:id="clearbtn" layoutX="484.0" layoutY="364.0" mnemonicParsing="false" onAction="#clearC"
+                    onMouseClicked="#clearM" prefHeight="33.0" prefWidth="79.0"
+                    style="-fx-background-color: #42cf9b; -fx-font-family: Poiret One;" text="Clear "
+                    textFill="WHITE"/>
+            <Button fx:id="backbtn6" layoutX="378.0" layoutY="364.0" mnemonicParsing="false" onAction="#back"
+                    onMouseClicked="#Back" prefHeight="33.0" prefWidth="73.0"
+                    style="-fx-background-color: #42cf9b; -fx-font-family: Poiret One;" text="Back"
+                    textFill="WHITE"/>
+            <Button layoutX="600.0" layoutY="364.0" mnemonicParsing="false" onAction="#Save"
+                    onMouseClicked="#save" prefHeight="33.0" prefWidth="73.0"
+                    style="-fx-background-color: #42cf9b; -fx-font-family: Poiret One;" text="Save "
+                    textFill="WHITE"/>
+            <ImageView accessibleRole="BUTTON" fitHeight="33.0" fitWidth="26.0" layoutX="29.0" layoutY="25.0"
+                       onMouseClicked="#comeback" pickOnBounds="true" preserveRatio="true">
+                <Image url="@img/back.png"/>
+            </ImageView>
+            <Label layoutX="301.0" layoutY="51.0" prefHeight="25.0" prefWidth="137.0"
+                   style="-fx-background-color: #2e354f;" text="Create Devis" textFill="#42cf9b">
+                <font>
+                    <Font size="20.0"/>
+                </font>
+            </Label>
+        </AnchorPane>
+    </GridPane>
+</VBox>
