@@ -1,4 +1,4 @@
-module com.example.invoicer {
+module com.gcode.invoicer {
     requires javafx.controls;
     requires javafx.fxml;
 
